@@ -1,0 +1,198 @@
+/* 
+    Document   : styles
+    Created on : Apr 15, 2012, 12:59:16 PM
+    Author     : zoltantarcsay
+    Description:
+        Purpose of the stylesheet follows.
+*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+* { 
+    font-family: 'Open Sans', sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+#wrap {
+    min-height: 100%;
+}
+
+#main {
+    overflow:auto;
+    padding-bottom: 80px;
+}
+
+#footer {
+    position: relative;
+    margin-top: -80px !important;
+    height: 20px;
+    clear:both;
+    margin-bottom: 0px;
+}
+
+p, li, div, td, dd, label {
+    font-size: 12px;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 26px;
+    color: #009645;
+    margin: 0;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 16px;
+    color: #333;
+    margin-top: 5px;
+}
+
+a {
+    color: #009645;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+body {
+    margin: 20px;
+}
+
+tr {
+    background-color: transparent;
+}
+
+tr:hover {
+    background-color: #EEE;
+}
+
+th {
+    background-color: #EEE;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 5px;
+}
+
+article {
+    margin: 20px;
+}
+
+.doboz {
+    background-color: #EEE;
+    border-radius: 4px;
+    border: 1px solid #AAA;
+    padding: 10px;
+    margin: 35px 0 20px 0;
+    box-shadow: 0 2px 2px #CCC;
+    /* Gradient */
+    background: rgb(238,238,238); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(219,219,219,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,238,238,1)), color-stop(100%,rgba(219,219,219,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(219,219,219,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(219,219,219,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(219,219,219,1) 100%); /* IE10+ */
+    background: linear-gradient(top, rgba(238,238,238,1) 0%,rgba(219,219,219,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#dbdbdb',GradientType=0 ); /* IE6-9 */
+}
+
+.c {
+    text-align: center;
+}
+
+.r {
+    text-align: right;
+}
+
+.menu {
+    list-style: none;
+    position: absolute;
+    top: 0px;
+    right: 20px;
+}
+
+.menu li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.menu li a {
+    color: #333;
+}
+
+li.b {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#keres {
+    padding: 5px 10px;
+    border: 1px solid #AAA;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    position: absolute;
+    right: 24px;
+    text-align: right;
+    height: 24px;
+}
+
+#fulek {
+    position: absolute;
+    left: -10px;
+    margin-top: 11px;
+    list-style: none;
+    float: left;
+    width: 600px;
+}
+
+#fulek li {
+    display: inline !important;
+    padding: 5px 10px;
+    margin: -3px;
+    border: 1px solid #AAA;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    background-color: #FFF;
+}
+
+#fulek li:hover {
+    background-color: #E0E0E0;
+}
+
+#fulek a {
+    text-decoration: none;
+    color: #000;
+}
+
+.ful_aktiv {
+    background-color: #EEE !important;
+    position: relative;
+    top: 1px;
+    padding-top: 10px !important;
+    font-size: 14px !important;
+}
+
+.kicsi {
+    font-size: 10px;
+}
+
+.highlight {
+    font-weight: bold;
+    color: red;
+}
+
+.msg {
+    background-color: #C8E8D7;
+    border-radius: 4px;
+    margin: 20px auto;
+    padding: 10px;
+    width: 400px;
+    text-align: center;
+    display: none;
+    font-size: 14px;
+    color: #888;
+}
