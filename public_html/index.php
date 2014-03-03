@@ -27,7 +27,9 @@
                 <ul class="menu">
                     <li><a href="?p=tartalom">Tartalom</a></li>
                     <li><a href="?p=csm">Az Olvasóhoz</a></li>
-                    <li><a href="?p=impresszum">Impresszum</a></li>
+                    <li><a href="?p=impresszum">Impresszum</a></li> 
+					
+					
                     <?php 
                         if ($_SESSION["user"] != null) {
                             echo "<li>Belépve: " . $_SESSION["user"] . "</li>";

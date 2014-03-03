@@ -14,9 +14,9 @@
             $result = @mysql_query($sql);
             if ($result) {
                 while ($row = mysql_fetch_assoc($result)) {
-                    echo "<tr>";
+                    echo "<tr class='col'>";
                     echo "<td>", $row[cim], "</td>";
-                    echo "<td><a href=\"", $row[link], "\" target=\"_blank\">", $row[link], "</a></td>";
+                    echo "<td><a class='col' href=\"", $row[link], "\" target=\"_blank\">", $row[link], "</a></td>";
                     echo "</tr>";
                 }
             }

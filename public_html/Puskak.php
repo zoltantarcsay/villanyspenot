@@ -19,10 +19,10 @@
             $result = @mysql_query($sql);
             if ($result) {
                 while ($row = mysql_fetch_assoc($result)) {
-                    echo "<tr>";
+                    echo "<tr class='col'>";
                     echo "<td>", $row[szerzo], "</td>";
-                    echo "<td><a href=\"?s=puskak&p=puska&n=", $row[kod], "\">", $row[cim], "</a></td>";
-                    echo "<td><a href=\"?p=szoveg&n=", $row[szov_kod], "\">", $row[fszerzo], ": ", $row[fcim], "</a></td>";
+                    echo "<td><a class='col' href=\"?s=puskak&p=puska&n=", $row[kod], "\">", $row[cim], "</a></td>";
+                    echo "<td><a class='col' href=\"?p=szoveg&n=", $row[szov_kod], "\">", $row[fszerzo], ": ", $row[fcim], "</a></td>";
                     echo "</tr>";
                 }
             }

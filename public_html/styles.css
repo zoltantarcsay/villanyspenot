@@ -5,11 +5,25 @@
     Description:
         Purpose of the stylesheet follows.
 */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
-* { 
-    font-family: 'Open Sans', sans-serif;
+@font-face
+{
+font-family: ClearSans;
+src: url(/fonts/ClearSansRegular.ttf);
 }
+
+@font-face
+{
+font-family: ClearSans;
+src: url(/fonts/ClearSansBold.ttf);
+font-weight:bold;
+}
+
+* { font-family:ClearSans; } 
+
+
+/* {font-family:"Istok Web";}*/
+
 
 html, body {
     height: 100%;
@@ -33,7 +47,7 @@ html, body {
 }
 
 p, li, div, td, dd, label {
-    font-size: 12px;
+    font-size: 14px;
 }
 
 h1 {
@@ -74,13 +88,20 @@ tr:hover {
 th {
     background-color: #EEE;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 14px;
     padding: 5px;
+	color: #009645;
 }
 
 article {
     margin: 20px;
+	text-align: justify;
 }
+
+.col 
+	{
+	text-align: left;
+	}
 
 .doboz {
     background-color: #EEE;
@@ -149,9 +170,10 @@ li.b {
     width: 600px;
 }
 
+
 #fulek li {
     display: inline !important;
-    padding: 5px 10px;
+    padding: 2px 10px;
     margin: -3px;
     border: 1px solid #AAA;
     border-bottom: none;
@@ -173,7 +195,7 @@ li.b {
     position: relative;
     top: 1px;
     padding-top: 10px !important;
-    font-size: 14px !important;
+    font-size: 16px !important;
 }
 
 .kicsi {

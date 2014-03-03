@@ -15,8 +15,8 @@
             $result = @mysql_query($sql);
             if ($result) {
                 while ($row = mysql_fetch_assoc($result)) {
-                    echo "<tr>";
-                    echo "<td><a href=\"", $row[link] , "\">", $row[cim], "</a></td>";
+                    echo "<tr class='col'>";
+                    echo "<td><a class='col' href=\"", $row[link] , "\">", $row[cim], "</a></td>";
                     $filesize = number_format(round(filesize($row[link]) / 1024), 0, ",", " ");
                     echo "<td>", $filesize, " KB</td>";
                     $fileext = pathinfo($row[link], PATHINFO_EXTENSION);

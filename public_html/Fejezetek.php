@@ -25,10 +25,10 @@
             $result = @mysql_query($sql);
             if ($result) {
                 while ($row = mysql_fetch_assoc($result)) {
-                    echo "<tr>";
+                    echo "<tr class='col'>";
                     echo "<td>", $row["alcim2"], "</td>";
                     echo "<td>", $row["szerzo"], "</td>";
-                    echo "<td><a href=\"?p=szoveg&n=", $row["kod"], "\">", $row["cim"], "</a></td>";
+                    echo "<td><a class='col' href=\"?p=szoveg&n=", $row["kod"], "\">", $row["cim"], "</a></td>";
                     echo "<td>", $row["alcim"], "</td>";
                     echo "</tr>";
                 }

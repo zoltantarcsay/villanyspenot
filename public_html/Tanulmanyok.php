@@ -17,9 +17,9 @@
             $result = @mysql_query($sql);
             if ($result) {
                 while ($row = mysql_fetch_assoc($result)) {
-                    echo "<tr>";
+                    echo "<tr class='col'>";
                     echo "<td>", $row[szerzo], "</td>";
-                    echo "<td><a href=\"?s=tanulmanyok&p=szoveg&n=", $row[kod], "\">", $row[cim], "</a></td>";
+                    echo "<td><a class='col' href=\"?s=tanulmanyok&p=szoveg&n=", $row[kod], "\">", $row[cim], "</a></td>";
                     echo "</tr>";
 
                 }
