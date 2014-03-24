@@ -4,7 +4,7 @@
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             foreach($_POST as $postkey => $postvalue) {
                 $_SESSION[$postkey] = $postvalue;
-            }
+			}
             //header( "Location: index.php?p=" . $_SESSION["p"] . "&s=" . $_SESSION["s"]);
         }
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
@@ -15,22 +15,26 @@
     }
 
     function login() {
-        if ($_SESSION["user"] == null) {
-            $name = mysql_real_escape_string($_SESSION['username']);
-            $pass = mysql_real_escape_string($_SESSION['password']);
-            $mysql = mysql_query("SELECT * FROM felhasznalok WHERE felhasznalonev = '{$name}' AND jelszo = '{$pass}'");
-            if (mysql_num_rows($mysql) < 1) {
-                $msg="Sikertelen belélés!";
-            }
-            else {
-                $_SESSION['loggedin'] = "YES";
-                $_SESSION['user'] = $name;
-                $msg="<script>msg('Sikeres belélés!');</script>";
-                resetAttrs("username,password,submit");            
-            }
-        }
-    }
-    
+	    	if ($_SESSION["user"] == null) {
+				// changed $_SESSION[''] to _POST[''] because of login bug
+				$email = mysql_real_escape_string($_POST['email']);
+				$pass = mysql_real_escape_string($_POST['password']);
+				$sql = "SELECT email, jelszo, nev 
+						FROM felhasznalok 
+						WHERE email = '{$email}' 
+						AND jelszo = '{$pass}'";
+				$result = mysql_query($sql);
+				$row = mysql_fetch_assoc($result);
+				$nev = $row['nev'];
+				if (mysql_num_rows($result) == 1) {
+					$_SESSION['loggedin'] = "YES";
+					$_SESSION['user'] = $nev;
+					echo "<script>msg('Sikeres belépés!');</script>";
+					resetAttrs("email,password,submit");            
+				}
+			}	
+	}
+	
     function logout() {
         session_unset();
         session_destroy();
@@ -64,5 +68,39 @@
             }
         }
     }
-
+	
+	function load_szoveg($cim, $sql, $result, $str_szoveg) {
+		processPage();
+		$sql = "SELECT szoveg,kod 
+				FROM szovegek 
+				WHERE cim='$cim' ";					
+		$result = mysql_query($sql);
+			if ($row = mysql_fetch_assoc($result)) {
+				$str_szoveg = $row['szoveg'];
+				$kod = $row['kod'];
+				echo "<div id='editor' designmode='off'>";
+				echo "<div id='menu_cont'><div id='menu_left'><h1>" . $cim . "</h1></div>";
+				echo "<div id='menu_right'>
+					<button class='link_btn' id='createlink'>Link hozzáadása</button>
+					<button class='link_btn' id='unlink'>Link eltávolítása</button></div></div>";
+				include 'text_editor.php';
+				echo "</div>";
+			}
+	}
+	function update_szoveg($text, $kod) {
+		if(isset($_SESSION['text']) && !empty($_SESSION['text'])) {
+			$text = mysql_real_escape_string($_SESSION['text']);
+			$kod = $_SESSION['kod'];
+			$sql = "UPDATE szovegek 
+					SET szoveg='$text' 
+					WHERE kod='$kod'";
+			mysql_query($sql);
+		}
+	}
+	function test_input($data) {
+		 $data = trim($data);
+		 $data = stripslashes($data);
+		 $data = htmlspecialchars($data);
+		 return $data;
+	}	
 ?>
