@@ -13,14 +13,8 @@
             echo "</div>";
             echo "<article>";
             $szoveg = $row[szoveg];
-			
-					
             $kulcsszavak = trim($_SESSION["kulcsszavak"]);
             echo str_replace($kulcsszavak, '<span class="highlight">'.$kulcsszavak.'</span>', $szoveg);
-			
-			// $szoveg is already echoed above
-            // echo $row[szoveg];
-			
             echo "</article>";
             $footer = "&copy;".$row[szerzo]."<br />";
         }
