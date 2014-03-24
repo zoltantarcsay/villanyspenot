@@ -1,7 +1,6 @@
 <div class="doboz">
     <h1>Belépés</h1>
 </div>
-<div id="msg" class="msg"></div>
 <?php	
     if (isset($_SESSION["user"])) {
 		header ('Location: index.php?p=tartalom&s=szerkeszto');
