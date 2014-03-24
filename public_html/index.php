@@ -4,11 +4,11 @@
     date_default_timezone_set('Europe/Budapest');    
     session_start();
     include_once "mysqlConnection.php";
-    include_once("Functions.php");
+    include_once "Functions.php";
     if ($_GET["reset"] == "1") resetAttrs("p,s,kulcsszavak");
     if ($_POST["logout"] == "1") logout();
-    if ($_SERVER["REQUEST_METHOD"] == "POST") login();
     processPage();
+	login();
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,6 +16,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Villanyspenót (csökkentett mód)</title>
         <link rel="stylesheet" href="styles.css"/>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script type="text/javascript" src="main.js"></script>
     </head>
     <body>
@@ -32,7 +33,7 @@
 					
                     <?php 
                         if ($_SESSION["user"] != null) {
-                            echo "<li>Belépve: " . $_SESSION["user"] . "</li>";
+                            echo "<li>Belépve: </li>" . "<li id='user'>" .  $_SESSION["user"] . "</li>";
                             echo "<li><a href='#' onclick='logout();'>Kilépés</a></li>";
                         }
                         else {
