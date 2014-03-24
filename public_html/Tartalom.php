@@ -27,5 +27,9 @@
     }
     if ($s == "puskak" ) {
         include "Puskak.php";
-    }
+	}
+	if	($s == "szerkeszto") {
+		include "Szerkeszto.php";
+	}
+    
 ?>
