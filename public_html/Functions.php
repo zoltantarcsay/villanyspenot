@@ -1,4 +1,5 @@
 <?php
+
     function processPage() {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             foreach($_POST as $postkey => $postvalue) {
@@ -77,23 +78,27 @@
 			if ($row = mysql_fetch_assoc($result)) {
 				$str_szoveg = $row['szoveg'];
 				$kod = $row['kod'];
-				echo "<div id='editor' designmode='off'>";
+				echo "<div id='editor'>";
 				echo "<div id='menu_cont'><div id='menu_left'><h1>" . $cim . "</h1></div>";
-				echo "<div id='menu_right'>
-					<button class='link_btn' id='createlink'>Link hozzáadása</button>
-					<button class='link_btn' id='unlink'>Link eltávolítása</button></div></div>";
+				echo "</div>";
 				include 'text_editor.php';
 				echo "</div>";
 			}
 	}
 	function update_szoveg($text, $kod) {
-		if(isset($_SESSION['text']) && !empty($_SESSION['text'])) {
-			$text = mysql_real_escape_string($_SESSION['text']);
-			$kod = $_SESSION['kod'];
+		if(isset($_POST['text']) && !empty($_POST['text'])) {
+			$text = mysql_real_escape_string($_POST['text']);
+			$kod = $_POST['kod'];
 			$sql = "UPDATE szovegek 
 					SET szoveg='$text' 
 					WHERE kod='$kod'";
-			mysql_query($sql);
+			$result = mysql_query($sql);
+			if ($result) {
+				echo "<script>alert('Sikeresen elküldve!');</script>";
+			}
+			else {
+				die('Sikertelen küldés: ' . mysql_error());
+			}
 		}
 	}
 	function test_input($data) {
