@@ -1,25 +1,50 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<div >
-	<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-	<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>						
-	<textarea name="area" id="area" style="width: 100%;">
-		<?php echo htmlspecialchars($str_szoveg, ENT_QUOTES); ?>
-	</textarea>
-</div>
-<div id="menu_cont_bottom">
-	<div id="menu_left">
-			<form id="send" method="post">
-			<input type="hidden" name="text" value=""></input>
-			<input type="hidden" name="kod" value="<?php echo $kod; ?>"></input>
-			<input class="editor_btn" id="btn_send" type="submit" value="Elküld"></input>
-			</form>
-	</div>
-</div>
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> 
 <script type="text/javascript">
-	$("#btn_send").click(function () {
-		var nicInstance = nicEditors.findEditor('area');
-		var content = nicInstance.getContent();
-		var formInfo = document.forms['send'];
-		formInfo.text.value = content;
+
+	bkLib.onDomLoaded(function() {
+		editor();
 	});
+	
+	/**
+	* nicExample
+	* @description: An example button plugin for nicEdit
+	* @requires: nicCore, nicPane, nicAdvancedButton
+	* @author: Brian Kirchoff
+	* @version: 0.9.0
+	*/
+	
+	var nicExampleOptions = {
+		buttons : {
+			'send' : {name : __('send'), type : 'nicEditorExampleButton'}
+		},iconFiles : {'send' : 'save.gif'}
+	};
+		var nicEditorExampleButton = nicEditorButton.extend({   
+		mouseClick : function() {
+			submitText();
+		}
+	});
+	nicEditors.registerPlugin(nicPlugin,nicExampleOptions);
+		
+</script>
+
+<div class="editor" id="editor_wrap">
+	<div id="panel"> </div>
+	<div id="area"> <?php echo $str_szoveg; ?> </div>
+</div>
+
+
+<form id="send" method="post">
+	<input type="hidden" name="text" value=""></input>
+	<input type="hidden" name="kod" value="<?php echo $kod; ?>"></input>
+</form>
+
+<script type="text/javascript">
+		
+	window.onload=function() {
+		var height = (screen.height)*0.7;
+		$( "#area" ).css( "height", height );
+	};
+	
 </script>
