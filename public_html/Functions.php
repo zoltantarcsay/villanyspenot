@@ -78,9 +78,8 @@
 			if ($row = mysql_fetch_assoc($result)) {
 				$str_szoveg = $row['szoveg'];
 				$kod = $row['kod'];
-				echo "<div id='editor'>";
-				echo "<div id='menu_cont'><div id='menu_left'><h1>" . $cim . "</h1></div>";
-				echo "</div>";
+				echo "<div>";
+				echo "<div class='editor'><h1>" . $cim . "</h1></div>";
 				include 'text_editor.php';
 				echo "</div>";
 			}
