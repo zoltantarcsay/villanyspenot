@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-
 <html>
 <head>
 <title>Regisztráció</title>
 <link rel="stylesheet" href="styles.css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
 <?php
 require 'Functions.php';
 require 'mysqlConnection.php';
-	// define variables and set to empty values 
+	/* define variables and set to empty values */
 	$nameErr = $emailErr = $passwordErr = "";
 	$name = $email = $password = "";
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
