@@ -37,3 +37,17 @@ function logout() {
     sessionFrom.submit();
     return false;
 }
+
+function submitText() {
+	var nicInstance = nicEditors.findEditor('area');
+	var content = nicInstance.getContent();
+	var formInfo = document.forms['send'];
+	formInfo.text.value = content;
+	document.getElementById("send").submit();
+}
+
+function editor(myNicEditor) {
+	var myNicEditor = new nicEditor({ buttonList : ['link','unlink','send'] });
+		myNicEditor.setPanel('panel');
+		myNicEditor.addInstance('area');
+}
