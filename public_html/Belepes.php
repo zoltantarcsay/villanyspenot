@@ -1,6 +1,7 @@
 <div class="doboz">
     <h1>Belépés</h1>
 </div>
+<div id="msg" class="msg"></div>
 <?php	
     if (isset($_SESSION["user"])) {
 		header ('Location: index.php?p=tartalom&s=szerkeszto');
@@ -15,4 +16,5 @@
     <input id="log_btn" type='submit' name='submit' value='Belépés'>
 </fieldset>
 </form>
+
 </div>
