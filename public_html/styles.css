@@ -259,8 +259,17 @@ li.b {
 	display: block;
 }
 
+#checkbox {
+	line-height: 0px;
+}
+
+#cecktext{
+	text-indent: 25px;
+}
+
 #reg_btn {
-	margin-left: 4.8em;
+	margin-left: 7em;
+	margin-right: auto;
 }
  
 #log_btn {
