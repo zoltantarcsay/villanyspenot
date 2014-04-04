@@ -57,7 +57,7 @@ test_input($data);
 			}
 				else {
 					$sql = 	"INSERT INTO felhasznalok (kod, email, jelszo, nev)
-							VALUES (DEFAULT, '$email', '$password', '$name')";
+							VALUES (DEFAULT, '$email', PASSWORD('$password'), '$name')";
 					$result = mysql_query($sql);
 					if ($result) {
 						echo "<script type='text/javascript'>

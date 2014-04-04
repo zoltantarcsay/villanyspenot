@@ -22,7 +22,7 @@
 				$sql = "SELECT email, jelszo, nev 
 						FROM felhasznalok 
 						WHERE email = '{$email}' 
-						AND jelszo = '{$pass}'";
+						AND jelszo = PASSWORD('{$pass}')";
 				$result = mysql_query($sql);
 				$row = mysql_fetch_assoc($result);
 				$nev = $row['nev'];
