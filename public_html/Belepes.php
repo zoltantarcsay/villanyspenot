@@ -14,6 +14,7 @@
     <label for="email">E-mail:</label><input type='text' name='email'><br>
     <label for="password">Jelszó:</label><input type='password' name='password'><br>
     <input id="log_btn" type='submit' name='submit' value='Belépés'>
+    <a href="register.php">Regisztráció</a>
 </fieldset>
 </form>
 
