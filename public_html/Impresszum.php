@@ -13,13 +13,13 @@
         <ul>
             <li>Balázs Debóra</li>
             <li>Nyerges Gábor Ádám</li>
+			<li>Simon Zsolt</li>
             <li>Tarcsay Zoltán</li>
-            <li>Simon Zsolt</li>
-        </ul>
+            </ul>
     <li class="b">Fejlesztés, üzemeltetés, karbantartás</li>
         <ul>
-            <li>Tarcsay Zoltán</li>
 			<li>Simon Zsolt</li>
+            <li>Tarcsay Zoltán</li>
         </ul>
     <p>
         <a href="#" onclick="kapcs()">Üzenet a szerkesztőségnek</a>
