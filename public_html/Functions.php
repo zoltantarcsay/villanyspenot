@@ -86,7 +86,7 @@
 	}
 	function update_szoveg($text, $kod) {
 		if(isset($_POST['text']) && !empty($_POST['text'])) {
-			$text = mysql_real_escape_string($_POST['text']);
+			$text = $_POST['text'];
 			$kod = $_POST['kod'];
 			$sql = "UPDATE szovegek 
 					SET szoveg='$text' 
